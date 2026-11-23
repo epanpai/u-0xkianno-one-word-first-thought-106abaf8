@@ -32,6 +32,7 @@ const out = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 if (
   WORD.length < 1 ||
   WORD.length > 24 ||
+  Buffer.byteLength(WORD, 'utf8') > 24 ||
   WORD.trim() === '' ||
   /\s/.test(WORD)
 ) {
